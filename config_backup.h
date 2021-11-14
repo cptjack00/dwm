@@ -16,12 +16,12 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "Fira Code Nerd Font:pixelsize=14:antialias=true:autohint=true", "Fira Code Nerd Font:pixelsize=14:antialias=true:autohint=true" };
-static char normbgcolor[]           = "#1e222a";
-static char normbordercolor[]       = "#2e323a";
+static char normbgcolor[]           = "#091f2e";
+static char normbordercolor[]       = "#091f2e";
 static char normfgcolor[]           = "#888ea7";
 static char selfgcolor[]            = "#091f2e";
-static char selbordercolor[]        = "#61afef";
-static char selbgcolor[]            = "#e06c70";
+static char selbordercolor[]        = "#34859e";
+static char selbgcolor[]            = "#34859e";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -183,7 +183,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
-	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
+	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
