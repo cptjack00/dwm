@@ -5,17 +5,17 @@
 #define TERMCLASS "St"
 
 /* appearance */
-static unsigned int borderpx  = 3;        /* border pixel of windows */
-static unsigned int snap      = 32;       /* snap pixel */
-static unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
-static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static int showbar            = 1;        /* 0 means no bar */
+static unsigned int borderpx  = 1;        /* border pixel of windows */
+static unsigned int snap      = 0;       /* snap pixel */
+static unsigned int gappih    = 3;       /* horiz inner gap between windows */
+static unsigned int gappiv    = 3;       /* vert inner gap between windows */
+static unsigned int gappoh    = 3;       /* horiz outer gap between windows and screen edge */
+static unsigned int gappov    = 3;       /* vert outer gap between windows and screen edge */
+static int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
+static int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+static int showbar            = 0;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "Fira Code Nerd Font:pixelsize=14:antialias=true:autohint=true", "Fira Code Nerd Font:pixelsize=14:antialias=true:autohint=true" };
+static char *fonts[]          = { "SauceCodePro Nerd Font:pixelsize=16:antialias=true:autohint=true", "SauceCodePro Nerd Font:pixelsize=16:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#1e222a";
 static char normbordercolor[]       = "#2e323a";
 static char normfgcolor[]           = "#888ea7";
@@ -60,6 +60,7 @@ static const Rule rules[] = {
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 static const Layout layouts[] = {
@@ -194,7 +195,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
-	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
+	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 0} },
 	/* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
